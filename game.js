@@ -31,13 +31,13 @@ function setDialogueVisible(visible) {
   ff7UiEl.classList.toggle("hidden", !visible);
 }
 
-const bgm = new Audio("./public/assets/audio/tifa-theme.mp3");
+const bgm = new Audio("/public/assets/audio/tifa-theme.mp3");
 bgm.loop = true;
 bgm.volume = 0.45;
 bgm.preload = "auto";
 let bgmStarted = false;
 
-const CUTSCENE_TRACK_URL = "./public/assets/audio/feel-special.mp3";
+const CUTSCENE_TRACK_URL = "/public/assets/audio/feel-special.mp3";
 const CUTSCENE_TRACK_START = 52;
 let bgmPausedAt = 0;
 let cutsceneTrackActive = false;
@@ -333,7 +333,7 @@ function faceYaw(fromPos, toPos) {
 }
 
 function startCloudCutscene() {
-  if (cutsceneState.active || cutsceneState.done || !tifaModel || !cloudNpc.model) {
+  if (cutsceneState.active || !tifaModel || !cloudNpc.model) {
     return;
   }
 
@@ -885,7 +885,7 @@ function bakeColladaToStaticGroup(colladaScene) {
 
 function loadTifaModel() {
   const loader = new ColladaLoader();
-  const modelPath = "./public/assets/characters/tifa/Tifa/Tifa.dae";
+  const modelPath = "/public/assets/characters/tifa/Tifa/Tifa.dae";
 
   loader.load(
     modelPath,
@@ -924,7 +924,7 @@ function loadTifaModel() {
 
 function loadCloudModel() {
   const loader = new ColladaLoader();
-  const modelPath = "./public/assets/characters/cloud/Cloud/Cloud.dae";
+  const modelPath = "/public/assets/characters/cloud/Cloud/Cloud.dae";
 
   loader.load(
     modelPath,
