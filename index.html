@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PS1 FF7-Style Tifa Demo</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E"
+    />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="viewport" id="viewport">
+      <canvas id="game-canvas" aria-label="3D game viewport"></canvas>
+      <div class="scanlines" aria-hidden="true"></div>
+      <section class="ff7-ui hidden" id="ff7-ui" aria-live="polite">
+        <div class="ff7-dialog">
+          <div class="ff7-name" id="ff7-name">Cloud</div>
+          <p class="ff7-text" id="ff7-text">...</p>
+          <div class="ff7-continue">Click / Enter</div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="./game.js"></script>
+  </body>
+</html>

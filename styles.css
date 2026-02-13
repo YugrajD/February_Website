@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  cursor: none;
+}
+
+.viewport {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  cursor: none;
+  background:
+    radial-gradient(circle at 22% 25%, #ff9bbb, #b0417a 54%, #43162f 100%);
+}
+
+#game-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.scanlines {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.04) 0px,
+      rgba(255, 255, 255, 0.04) 1px,
+      rgba(0, 0, 0, 0.08) 2px,
+      rgba(0, 0, 0, 0.08) 3px
+    );
+  mix-blend-mode: soft-light;
+  opacity: 0.7;
+}
+
+.ff7-ui {
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2.25vh;
+  display: grid;
+  place-items: center;
+  z-index: 5;
+}
+
+.ff7-ui.hidden {
+  display: none;
+}
+
+.ff7-dialog {
+  width: min(90vw, 920px);
+  min-height: 124px;
+  border: 3px solid #ececec;
+  box-shadow:
+    inset 0 0 0 2px #3f3f3f,
+    inset 0 0 0 4px #ececec,
+    0 12px 20px rgba(0, 0, 0, 0.35);
+  background:
+    linear-gradient(180deg, #0f2ca3 0%, #00106e 45%, #060a53 100%);
+  color: #f6f6f6;
+  text-shadow:
+    1px 1px 0 #202020,
+    -1px 0 0 #202020;
+  padding: 10px 16px 12px;
+  letter-spacing: 0.02em;
+  image-rendering: pixelated;
+}
+
+.ff7-name {
+  font-size: clamp(26px, 3.1vw, 38px);
+  line-height: 1.08;
+  margin-bottom: 2px;
+}
+
+.ff7-text {
+  margin: 0;
+  font-size: clamp(30px, 2.8vw, 42px);
+  line-height: 1.1;
+}
+
+.ff7-continue {
+  margin-top: 2px;
+  text-align: right;
+  font-size: clamp(16px, 1.4vw, 22px);
+  opacity: 0.9;
+}
+
+@media (max-width: 680px) {
+  .ff7-dialog {
+    width: 95vw;
+    padding: 9px 11px 11px;
+  }
+}
